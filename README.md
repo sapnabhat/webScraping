@@ -1,3 +1,5 @@
+Web Scraping using lxml library
+
 1. Selected Flipkart.com (ecommerce website) that has reviews on TVs. The reviews include text, a date of submission, and a star rating.
 2. Collected at least 1000 TV reviews this website.
 3. Stored all the reviews in a single file called "reviews.txt". The file include the following TAB-separated columns:
