@@ -8,14 +8,17 @@ import time,sys,urllib2
 import requests
 from lxml import html
 
+#to remove non-ASCII characters
 def remove_non_ascii(text):
     return ''.join(i for i in text if ord(i)<128)
+    
+# to remove next Line characters \n
 def remove_nextlinechar(text):
     return text.replace('\n', ' ')
 
 browser=urllib2.build_opener()
 browser.addheaders=[('User-agent', 'Mozilla/5.0')]
-fw=open('reviews4.txt','w')
+fw=open('reviews.txt','w')
 index=0
 page=0
 rev = []
@@ -44,7 +47,8 @@ while (page<230):
         ratingDate.append(date)
     
     page+=10
-    
+
+#writing the data to reviews.txt   
 while (index <len(rev)):
         fw.write(str('flipkart.com') + '\t' + str(remove_nextlinechar(rev[index])) + '\t' + 
         str(ratingStar[index]) + '\t' + str(remove_nextlinechar(ratingDate[index])) + '\n') 
